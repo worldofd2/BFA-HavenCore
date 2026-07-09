@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1.7
-# BFA-HavenCore - build multi-stage (EXPERIMENTAL Linux port, ver docker/README.md)
+# BFA-HavenCore - multi-stage build (EXPERIMENTAL Linux port, see docker/README.md)
+# BFA-HavenCore - build multi-stage (puerto EXPERIMENTAL a Linux, ver docker/README.md)
 
 FROM ubuntu:24.04 AS build
 ENV DEBIAN_FRONTEND=noninteractive

@@ -17,9 +17,13 @@ services:
       timeout: 5s
       retries: 30
 
-  # Importa los dumps SQL base (auth/world/characters/hotfixes) que TENES que
-  # descargar aparte (no vienen en el repo, ver docker/README.md) y colocar
-  # en ./sql/base/*.sql antes de correr esto.
+  # EN: Imports the base SQL dumps (auth/world/characters/hotfixes) that you
+  # MUST download separately (not included in the repo, see
+  # docker/README.md) and place in ./sql/base/*.sql before running this.
+  #   docker compose run --rm db-import
+  # ES: Importa los dumps SQL base (auth/world/characters/hotfixes) que TENES
+  # que descargar aparte (no vienen en el repo, ver docker/README.md) y
+  # colocar en ./sql/base/*.sql antes de correr esto.
   #   docker compose run --rm db-import
   db-import:
     container_name: bfacore-db-import
@@ -74,17 +78,26 @@ services:
       DB_PASS: ${DB_ROOT_PASSWORD:-admin}
     volumes:
       - worldserver_etc:/opt/bfacore/etc
-      # Datos extraidos del cliente (dbc/maps/vmaps/mmaps). Ver docker/README.md.
+      # EN: Client-extracted data (dbc/maps/vmaps/mmaps). See docker/README.md.
+      # ES: Datos extraidos del cliente (dbc/maps/vmaps/mmaps). Ver docker/README.md.
       - ./client-data:/opt/bfacore/bin/ClientData:ro
     entrypoint: ["/opt/bfacore/entrypoint.sh", "worldserver"]
     ports:
       - "8085:8085"
-      # InstanceServerPort (World.cpp, default 8086): puerto separado que
+      # EN: InstanceServerPort (World.cpp, default 8086): separate port used
+      # by the "Enter World" hand-off (WorldSession::SendConnectToInstance).
+      # Without publishing it, the client reaches character select fine but
+      # entering the world the 2nd connect fails and shows "World server is
+      # down".
+      # ES: InstanceServerPort (World.cpp, default 8086): puerto separado que
       # usa el hand-off de "Enter World" (WorldSession::SendConnectToInstance).
       # Sin publicarlo, el cliente entra a character select bien pero al
       # entrar al mundo el 2do connect falla y muestra "World server is down".
       - "8086:8086"
-    # stdin_open sin tty: permite mandar comandos a la consola con
+    # EN: stdin_open without tty: allows sending commands to the console
+    # via `docker attach` + piped stdin (with tty:true Docker refuses to
+    # attach if stdin isn't an interactive terminal).
+    # ES: stdin_open sin tty: permite mandar comandos a la consola con
     # `docker attach` + stdin canalizado (con tty:true Docker rechaza el
     # attach si stdin no es un terminal interactivo).
     stdin_open: true
