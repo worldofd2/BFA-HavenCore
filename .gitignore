@@ -1,3 +1,5 @@
 sql/base/*.sql
 sql/base/*.rar
 client-data/**
+.claude/
+TODO.md
