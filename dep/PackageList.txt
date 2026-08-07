@@ -30,7 +30,7 @@ G3D (a commercial-grade C++ 3D engine available as Open Source (BSD License)
 
 jemalloc (a general-purpose scalable concurrent malloc-implementation)
   http://www.canonware.com/jemalloc/
-  Version: 3.6.0
+  Version: 5.2.1
 
 libreadline (command line editing library)
   https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
@@ -41,8 +41,8 @@ OpenSSL (general-purpose cryptography library)
   Version: external
 
 SFMT (SIMD-oriented Fast Mersenne Twister)
-  Based on http://agner.org/random/
-  Version: 2010-Aug-03
+  https://github.com/MersenneTwister-Lab/SFMT
+  Version: 73bcba2e483640b8d50c1275514326dd4c1b0ca4
 
 utf8-cpp (UTF-8 with C++ in a Portable Way)
   https://github.com/nemtrif/utfcpp
@@ -54,7 +54,7 @@ zlib (A Massively Spiffy Yet Delicately Unobtrusive Compression Library)
 
 gSOAP (a portable development toolkit for C and C++ XML Web services and XML data bindings)
   http://gsoap2.sourceforge.net/
-  Version: 2.8.49
+  Version: 2.8.117
 
 recastnavigation (Recast is state of the art navigation mesh construction toolset for games)
   https://github.com/memononen/recastnavigation
@@ -65,8 +65,8 @@ CascLib (An open-source implementation of library for reading CASC storage from 
   Version: 0a05c59eb8a3eab1bc5471f43934cd5f992f0aca
 
 rapidjson (A fast JSON parser/generator for C++ with both SAX/DOM style API http://rapidjson.org/)
-  https://github.com/miloyip/rapidjson
-  Version: v1.1.0
+  https://github.com/Tencent/rapidjson
+  Version: 27c3a8dc0e2c9218fe94986d249a12b5ed838f1d
 
 protobuf (Protocol Buffers - Google's data interchange format https://developers.google.com/protocol-buffers/)
   https://github.com/google/protobuf
